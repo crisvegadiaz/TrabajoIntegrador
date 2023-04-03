@@ -1,10 +1,51 @@
 /* VARIABLES DE CSS */
-:root{
-    --color-violeta:#e59cff;
-    --color-verde:#4cffa9;
-    --color-oscuro:#090a0a;
-    --color-negro:#1e1f29;
-    --color-blanco:#ffffff;
-    --font-arimo:'Arimo', sans-serif;
-    --font-jetBreins:'JetBrains Mono', monospace;
+:root {
+    --color-violeta: #e59cff;
+    --color-verde: #4cffa9;
+    --color-oscuro: #090a0a;
+    --color-negro: #1e1f29;
+    --color-blanco: #ffffff;
+    --font-arimo: 'Arimo', sans-serif;
+    --font-jetBreins: 'JetBrains Mono', monospace;
+}
+
+
+.cuerpo {
+    background-color: var(--color-oscuro);
+}
+
+.cuerpo__cabecera {
+    align-items: center;
+    background-color: #1e1f29;
+    display: flex;
+    justify-content: space-around;
+    padding: 0.5rem;
+}
+
+.cabecera__menu {
+    margin: 0 1.5rem;
+    display: flex;
+}
+
+.cabecera__img {
+    margin: 0 1.5rem;
+    width: 20rem;
+}
+
+.menu__enlace {
+    width: 15rem;
+    background-color: var(--color-violeta);
+    border-radius: 40% 0% 40% 0% / 100% 9% 100% 0%;
+    color: var(--color-oscuro);
+    font-family: var(--font-arimo);
+    font-size: 1rem;
+    font-style: italic;
+    font-weight: bolder;
+    padding: 1rem 0.5rem;
+    text-decoration: none;
+    text-align: center;
+}
+
+.menu__enlace:nth-child(2) {
+    background-color: var(--color-verde);
 }
