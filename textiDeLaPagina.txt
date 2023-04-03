@@ -32,7 +32,7 @@ Derechos de autor 2023
 
 ____Paleta de colores____
 
-bioleta
+violeta
 #e59cff
 
 verde
