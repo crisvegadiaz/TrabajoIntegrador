@@ -10,11 +10,11 @@
     <!-- GOOGLE FONTS -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400;1,600;1,700&family=JetBrains+Mono:ital,wght@0,400;0,600;1,400;1,600&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400;1,600;1,700&family=JetBrains+Mono:ital,wght@0,400;0,600;1,400;1,600&display=swap" rel="stylesheet">
     <!-- COLOCAR SU NOMBRE -->
     <meta name="author" content="Cristian_Diaz_Vega">
+    <!-- hamburgers -->
+    <link rel="stylesheet" href="./hamburgers/dist/hamburgers.css">
     <!-- STYLE -->
     <link rel="stylesheet" href="./Style/reset.css">
     <link rel="stylesheet" href="./Style/style.css">
@@ -28,9 +28,15 @@
             <img class="cabecera__img" src="./img/logo1.svg" alt="Logo">
         </a>
         <nav class="cabecera__menu">
-            <a class="menu__enlace" href="#">ÚNETENOS</a>
-            <a class="menu__enlace" href="#">INTEGRANTES</a>
-            <a class="menu__enlace" href="#">TRABAJA CON NOSOTROS</a>
+            <a class="menu__enlace" href="https://developer.mozilla.org/en-US/docs/Web/CSS/transform-function/skewX">
+                <p>ÚNETENOS</p>
+            </a>
+            <a class="menu__enlace" href="#">
+                <p>INTEGRANTES</p>
+            </a>
+            <a class="menu__enlace" href="#">
+                <p>TRABAJA CON NOSOTROS</p>
+            </a>
         </nav>
     </header>
     <main>
@@ -40,7 +46,13 @@
         <article></article>
     </main>
     <footer>
+        <button class="hamburger hamburger--arrow is-active" type="button">
+            <span class="hamburger-box">
+                <span class="hamburger-inner"></span>
+            </span>
+        </button>
     </footer>
+    <script src="./script/script.js"></script>
 </body>
 
 </html>
