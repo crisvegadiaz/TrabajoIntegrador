@@ -9,9 +9,9 @@
     --font-jetBreins: 'JetBrains Mono', monospace;
 }
 
+/* COLOR DE FONDO */
 .cuerpo {
     background-color: var(--color-oscuro);
-    height: 200vw;
 }
 
 /*--------Seccion1-------- */
@@ -26,13 +26,8 @@
     z-index: 99;
 }
 
-.cabecera__menu {
-    display: flex;
-    margin: 0 1.5rem;
-}
-
 .cabecera__img {
-    background-image: url(../img/logo1.svg);
+    background-image: url("../img/logo1.svg");
     background-position: center;
     background-repeat: no-repeat;
     background-size: 90%;
@@ -40,28 +35,34 @@
     width: 15rem;
 }
 
-.menu__enlace {
-    background-color: var(--color-violeta);
-    margin: 0 0.3rem;
-    padding: 1rem 1rem;
-    text-align: center;
-    text-decoration: none;
-    transform: skewX(-36deg);
-    width: 12rem;
+.menu__lista {
+    display: flex;
+    gap: 0.5rem;
 }
 
-.menu__enlace:nth-child(2) {
+.lista__enlace {
+    background-color: var(--color-violeta);
+    transform: skewX(-36deg);
+}
+
+.lista__enlace:nth-child(2) {
     background-color: var(--color-verde);
 }
 
-.menu__enlace p {
+.enlace__a {
     color: var(--color-oscuro);
+    display: block;
     font-family: var(--font-arimo);
     font-size: 0.9rem;
     font-style: italic;
     font-weight: bolder;
+    padding: 1rem 0.5rem;
+    text-align: center;
+    text-decoration: none;
     transform: skewX(36deg);
+    width: 12rem;
 }
+
 
 .hamburger {
     display: none;
@@ -74,10 +75,6 @@
 @media only screen and (max-width: 1023px) {
 
     /*--------Seccion1-------- */
-    .menuDesativado {
-        display: none;
-    }
-
     .cuerpo__cabecera {
         background-color: var(--color-violeta);
         justify-content: flex-start;
@@ -85,7 +82,7 @@
     }
 
     .cabecera__img {
-        background-image: url(../img/logo2.svg);
+        background-image: url("../img/logo2.svg");
         background-position: center;
         background-repeat: no-repeat;
         background-size: 90%;
@@ -93,7 +90,7 @@
         width: 13rem;
     }
 
-    .cabecera__menu {
+    .menu__lista {
         align-items: center;
         background-color: var(--color-negro);
         flex-direction: column;
@@ -108,13 +105,10 @@
         z-index: 98;
     }
 
-    .menu__enlace {
-        padding: 2rem 1rem;
+    .enlace__a {
+        font-size: 1.5rem;
+        padding: 1.5rem 1rem;
         width: 20rem;
-    }
-
-    .menu__enlace p {
-        font-size: 1.5em;
     }
 
     .hamburger {
@@ -133,7 +127,6 @@
     .menuDesativado {
         display: none;
     }
-
     /* ------------------------ */
 }
 
@@ -144,18 +137,13 @@
 
     /*--------Seccion1-------- */
     .cuerpo__cabecera {
-        background-color: var(--color-violeta);
         justify-content: center;
     }
 
-    .menu__enlace {
-        padding: 1.5rem 0;
+    .enlace__a {
+        font-size: 1rem;
+        padding: 1.5rem 1rem;
         width: 15rem;
     }
-
-    .menu__enlace p {
-        font-size: 1em;
-    }
-
     /* ------------------------ */
 }
