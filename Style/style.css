@@ -11,10 +11,10 @@
 
 .cuerpo {
     background-color: var(--color-oscuro);
-    height: 100vw;
+    height: 200vw;
 }
 
-/*___________ MENU_________________ */
+/*--------Seccion1-------- */
 .cuerpo__cabecera {
     align-items: center;
     background-color: #1e1f29;
@@ -32,17 +32,22 @@
 }
 
 .cabecera__img {
+    background-image: url(../img/logo1.svg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 90%;
+    height: 3rem;
     width: 15rem;
 }
 
 .menu__enlace {
     background-color: var(--color-violeta);
     margin: 0 0.3rem;
-    padding: 1rem 0;
+    padding: 1rem 1rem;
     text-align: center;
     text-decoration: none;
     transform: skewX(-36deg);
-    width: 14rem;
+    width: 12rem;
 }
 
 .menu__enlace:nth-child(2) {
@@ -59,16 +64,98 @@
 }
 
 .hamburger {
-    background-color: var(--color-verde);
-    border-radius: 50%;
-    bottom: 0;
-    display: flow;
-    height: 90px;
-    margin: 10px;
-    position: fixed;
-    right: 0;
-    width: 90px;
-    z-index: 91;
+    display: none;
 }
 
-/* --------------------- */
+/*--------------------- */
+
+
+/* Media queries para tablets */
+@media only screen and (max-width: 1023px) {
+
+    /*--------Seccion1-------- */
+    .menuDesativado {
+        display: none;
+    }
+
+    .cuerpo__cabecera {
+        background-color: var(--color-violeta);
+        justify-content: flex-start;
+        position: static;
+    }
+
+    .cabecera__img {
+        background-image: url(../img/logo2.svg);
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: 90%;
+        height: 2.5rem;
+        width: 13rem;
+    }
+
+    .cabecera__menu {
+        align-items: center;
+        background-color: var(--color-negro);
+        flex-direction: column;
+        gap: 3rem;
+        height: 100%;
+        justify-content: center;
+        left: 0;
+        margin: 0;
+        position: fixed;
+        top: 0;
+        width: 100%;
+        z-index: 98;
+    }
+
+    .menu__enlace {
+        padding: 2rem 1rem;
+        width: 20rem;
+    }
+
+    .menu__enlace p {
+        font-size: 1.5em;
+    }
+
+    .hamburger {
+        background-color: var(--color-verde);
+        border-radius: 50%;
+        bottom: 0;
+        display: block;
+        height: 90px;
+        margin: 10px;
+        position: fixed;
+        right: 0;
+        width: 90px;
+        z-index: 99;
+    }
+
+    .menuDesativado {
+        display: none;
+    }
+
+    /* ------------------------ */
+}
+
+
+
+/* Media queries para dispositivos móviles */
+@media only screen and (max-width: 767px) {
+
+    /*--------Seccion1-------- */
+    .cuerpo__cabecera {
+        background-color: var(--color-violeta);
+        justify-content: center;
+    }
+
+    .menu__enlace {
+        padding: 1.5rem 0;
+        width: 15rem;
+    }
+
+    .menu__enlace p {
+        font-size: 1em;
+    }
+
+    /* ------------------------ */
+}
