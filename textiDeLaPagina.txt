@@ -49,3 +49,22 @@ blaco
 
 oscuro
 #030303
+
+_____________________________________
+placeholder="Juan cortes" 
+title="Escribe tu nombre" 
+required 
+minlength="3"
+pattern="^[A-Za-zÑñÁáÉéÍíÓóÚúÜü\s]+$"
+_____________________________________
+placeholder="Juan89cortes@gmail.com" 
+required 
+title="Email incorreto" 
+pattern="^[a-z0-9]+(\.[_a-z0-9]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,15})$"
+_____________________________________
+title="Numero de telefono" 
+required 
+minlength="10"
+maxlength="20"
+pattern="^(?:(?:00)?549?)?0?(?:11|[2368]\d)(?:(?=\d{0,2}15)\d{2})??\d{8}$"
+_____________________________________

@@ -70,18 +70,15 @@
 /*--------------------- */
 
 
-.cuerpo__main {
-    align-items: center;
-    display: flex;
-    flex-direction: column;
-}
+
 
 /*--------Seccion3-------- */
 .main__unete {
+    margin: 3rem auto;
     align-items: center;
     display: flex;
     flex-direction: column;
-    gap: 4rem;
+    gap: 5rem;
     justify-content: center;
     width: 75%;
 }
@@ -90,14 +87,14 @@
     align-self: flex-start;
     background-color: var(--color-verde);
     margin-left: 2rem;
-    padding: 2rem;
+    padding: 1.5vw 6vw;
     transform: skewX(-36deg);
 }
 
 .titulo__tex {
     display: block;
     font-family: var(--font-arimo);
-    font-size: 1.5rem;
+    font-size: 1.5vw;
     font-style: italic;
     font-weight: bold;
     transform: skewX(36deg);
@@ -106,23 +103,67 @@
 .unete__texto {
     color: var(--color-blanco);
     font-family: var(--font-jetBreins);
-    font-size: 1.5rem;
+    font-size: 1.4vw;
     font-style: italic;
     font-weight: bold;
     text-align: center;
-    width: 80%;
+    width: 70%;
 }
 
 .unete__info {
     display: flex;
     gap: 1rem;
+    width: 100%;
 }
 
-.unete__formulario {
+.unete__inscrip {
+    padding: 1rem;
     background-color: var(--color-negro);
     width: 50%;
+    border-radius: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    
+}
+.inscrip__la{
+    color: var(--color-blanco);
+    font-family: var(--font-jetBreins);
+    font-weight: bold;
+    font-style: italic;
+    font-size: 1vw;
 }
 
+.inscrip__in{
+    font-family: var(--font-jetBreins);
+    border-radius: 0.5rem;
+    font-size: 1vw;
+    padding: 0.6rem;
+    border: none;
+}
+
+
+.inscrip__fiel{
+    margin-top: 2rem;
+    display: flex;
+    justify-content: space-between;
+}
+.fiel__boton{
+    color: var(--color-oscuro);
+    font-family: var(--font-jetBreins);
+    font-weight: bold;
+    font-style: italic;
+    font-size: 1vw;
+    width: 25%;
+    padding: 0.5rem;
+    border: none;
+    border-radius: 0.5rem;
+    background-color: var(--color-violeta);
+}
+
+.fiel__boton:nth-child(2){
+    background-color: var(--color-verde);
+}
 .info__img {
     width: 50%;
 }
