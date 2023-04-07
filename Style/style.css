@@ -63,12 +63,74 @@
     width: 12rem;
 }
 
-
 .hamburger {
     display: none;
 }
 
 /*--------------------- */
+
+
+.cuerpo__main {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+}
+
+/*--------Seccion3-------- */
+.main__unete {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+    justify-content: center;
+    width: 75%;
+}
+
+.unete__titulo {
+    align-self: flex-start;
+    background-color: var(--color-verde);
+    margin-left: 2rem;
+    padding: 2rem;
+    transform: skewX(-36deg);
+}
+
+.titulo__tex {
+    display: block;
+    font-family: var(--font-arimo);
+    font-size: 1.5rem;
+    font-style: italic;
+    font-weight: bold;
+    transform: skewX(36deg);
+}
+
+.unete__texto {
+    color: var(--color-blanco);
+    font-family: var(--font-jetBreins);
+    font-size: 1.5rem;
+    font-style: italic;
+    font-weight: bold;
+    text-align: center;
+    width: 80%;
+}
+
+.unete__info {
+    display: flex;
+    gap: 1rem;
+}
+
+.unete__formulario {
+    background-color: var(--color-negro);
+    width: 50%;
+}
+
+.info__img {
+    width: 50%;
+}
+
+/*--------------------- */
+
+
+
 
 
 /* Media queries para tablets */
@@ -127,6 +189,7 @@
     .menuDesativado {
         display: none;
     }
+
     /* ------------------------ */
 }
 
@@ -145,5 +208,6 @@
         padding: 1.5rem 1rem;
         width: 15rem;
     }
+
     /* ------------------------ */
 }
