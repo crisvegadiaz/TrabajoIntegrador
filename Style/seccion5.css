@@ -48,10 +48,10 @@
     border-radius: 1rem;
     display: flex;
     flex-direction: column;
+    gap: 0.5vw;
     justify-content: space-evenly;
     padding: 1rem;
     width: 50%;
-    gap:0.5vw;
 
 }
 
@@ -70,14 +70,16 @@
     font-size: 1vw;
     padding: 0.6rem;
 }
-.solicitud__mesaje{
+
+.solicitud__mesaje {
     height: 15%;
+    resize: none;
 }
 
-.solicitud__env{
+.solicitud__env {
+    align-items: center;
     display: flex;
     justify-content: space-between;
-    align-items: center;
 }
 
 .env__boton {
@@ -92,29 +94,30 @@
     padding: 0.5rem;
     width: 25%;
 }
+
 /* _________________ */
-.archivo{
-    text-align: left;
-    padding: 0.5rem;
-    font-size: 1.4vw;
-    font-family: var(--font-arimo);
-    width: 24%;
+.archivo {
     background-image: url("../Img/archivo.svg");
     background-position: right 0.5vw center;
     background-repeat: no-repeat;
     background-size: 20%;
+    font-family: var(--font-arimo);
+    font-size: 1.4vw;
+    padding: 0.5rem;
+    text-align: left;
+    width: 24%;
 }
 
 
-.solicitud__env .solicitud__la{
-    width: 25%;
-    height: 2rem;
-    display: flex;
+.solicitud__env .solicitud__la {
     align-items: center;
     background-image: url("../Img/flecha2.svg");
-    background-position:right;
+    background-position: right;
     background-repeat: no-repeat;
     background-size: 30%;
+    display: flex;
+    height: 2rem;
+    width: 25%;
 }
 
 /* _________________ */
@@ -174,6 +177,7 @@
 
 /* Media queries para tablets */
 @media only screen and (max-width: 1023px) {
+
     /*--------Seccion5-------- */
     .main__trabaja {
         width: 90%;
@@ -195,7 +199,7 @@
         width: 90%;
     }
 
-    .trabajo__info{
+    .trabajo__info {
         gap: 0;
     }
 
@@ -203,21 +207,23 @@
         gap: 0.5vw;
         width: 100%;
     }
-    .cont{
+
+    .cont {
         width: 50%;
     }
-    .archivo{
-        width: 35%;
+
+    .archivo {
         background-size: 20%;
-    }
-    
-    
-    .solicitud__env .solicitud__la{
         width: 35%;
-        height: 2rem;
-        background-size: 30%;
     }
-    
+
+
+    .solicitud__env .solicitud__la {
+        background-size: 30%;
+        height: 2rem;
+        width: 35%;
+    }
+
 
     .solicitud__la {
         font-size: 2vw;
@@ -256,8 +262,9 @@
 
 /* Media queries para dispositivos móviles */
 @media only screen and (max-width: 767px) {
+
     /*--------Seccion5-------- */
-    .main__trabaja{
+    .main__trabaja {
         gap: 2rem;
         width: 100%;
     }
@@ -274,7 +281,7 @@
         font-size: 4vw;
         width: 90%;
     }
-    
+
     .info__solicitud {
         background-image: url("../Img/code2.svg");
         background-position: top right;
@@ -297,20 +304,23 @@
         font-size: 4vw;
         width: 100%;
     }
-    .cont{
+
+    .cont {
         width: 100%;
     }
+
     .env__boton {
         font-size: 4vw;
         width: 35%;
     }
-    .archivo{
-        width: 35%;
+
+    .archivo {
+        font-size: 5vw;
         padding: 4vw;
-        font-size:5vw;
+        width: 35%;
     }
 
-    .solicitud__img{
+    .solicitud__img {
         display: none;
     }
 
@@ -323,5 +333,6 @@
     .informacion__boton {
         font-size: 4vw;
     }
+
     /* ------------------------ */
 }
