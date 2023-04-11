@@ -1,3 +1,53 @@
+function resetFormulario() {
+  boton[1].classList.add("boton1");
+  boton[1].classList.remove("boton3");
+  boton[1].textContent = "SIGUIENTE";
+
+  label[0].textContent = "INGRESE SU NOMBRE";
+  label[1].textContent = "INGRESE SU MAIL";
+  label[2].textContent = "INGRESE SU NÚMERO DE TELÉFONO";
+
+  input[0].style.backgroundImage = "none";
+  input[1].style.backgroundImage = "none";
+  input[2].style.backgroundImage = "none";
+
+  input[0].style.border = "none";
+  input[1].style.border = "none";
+  input[2].style.border = "none";
+
+  label[2].style.visibility = "visible";
+  input[2].style.visibility = "visible";
+
+  label.forEach((text) => {
+    text.style.color = "rgb(255, 255, 255)";
+  });
+  input.forEach((valor) => {
+    valor.value = "";
+  });
+
+  valores = [];
+}
+
+function mensajeValidacion(label, input, mensaje) {
+  label.textContent = mensaje;
+  label.style.color = "rgb(76, 255, 169)";
+  input.style.backgroundImage = "url(./Img/Check1.svg)";
+  input.style.backgroundPosition = "center right 0.5rem";
+  input.style.backgroundRepeat = "no-repeat";
+  input.style.backgroundSize = "5%";
+  input.style.border = "solid 1px rgb(76, 255, 169)";
+}
+
+function mensajeError(label, input, mensaje) {
+  label.textContent = mensaje;
+  label.style.color = "rgb(247, 37, 135)";
+  input.style.backgroundImage = "url(./Img/Check2.svg)";
+  input.style.backgroundPosition = "center right 0.5rem";
+  input.style.backgroundRepeat = "no-repeat";
+  input.style.backgroundSize = "5%";
+  input.style.border = "solid 1px rgb(247, 37, 135)";
+}
+
 const botonMenu = document.querySelector(".hamburger"),
   body = document.querySelector("body"),
   menu = document.querySelector(".cabecera__menu"),
@@ -6,6 +56,14 @@ const botonMenu = document.querySelector(".hamburger"),
   boton = document.querySelectorAll(".fiel__boton");
 
 let valores = [];
+
+// expreciones regulares
+const reg0 = /^[A-Za-zÑñÁáÉéÍíÓóÚúÜü\s]{3,20}$/,
+  reg1 = /^[a-z0-9]+(\.[_a-z0-9]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,15})$/,
+  reg2 = /^(?:(?:00)?549?)?0?(?:11|[2368]\d)(?:(?=\d{0,2}15)\d{2})??\d{8}$/,
+  reg4 = /^[A-Za-zÑñÁáÉéÍíÓóÚúÜü\s]{10,40}$/,
+  reg5 = /^\d{5}(?:[-\s]\d{4})?$/;
+
 
 // evento para abrir/cerrar el menú
 botonMenu.addEventListener("click", (e) => {
@@ -23,40 +81,29 @@ body.addEventListener("click", (e) => {
   if (e.target.classList.contains("boton1")) {
     e.preventDefault();
 
-    const reg0 = /^[A-Za-zÑñÁáÉéÍíÓóÚúÜü\s]{3,20}$/,
-      reg1 =
-        /^[a-z0-9]+(\.[_a-z0-9]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,15})$/,
-      reg2 = /^(?:(?:00)?549?)?0?(?:11|[2368]\d)(?:(?=\d{0,2}15)\d{2})??\d{8}$/;
-
     let valido = [false, false, false];
 
     if (reg0.test(input[0].value)) {
-      label[0].textContent = "✅ NOMBRE VÁLIDO";
-      label[0].style.color = "rgb(76, 255, 169)";
+      mensajeValidacion(label[0], input[0], "NOMBRE VÁLIDO");
       valido[0] = true;
     } else {
-      label[0].textContent = "❌ NOMBRE NO VÁLIDO";
-      label[0].style.color = "rgb(247, 37, 135)";
+      mensajeError(label[0], input[0], "NOMBRE NO VÁLIDO");
       valido[0] = false;
     }
 
     if (reg1.test(input[1].value)) {
-      label[1].textContent = "✅ EMAIL VÁLIDO";
-      label[1].style.color = "rgb(76, 255, 169)";
+      mensajeValidacion(label[1], input[1], "EMAIL VÁLIDO");
       valido[1] = true;
     } else {
-      label[1].textContent = "❌ EMAIL NO VÁLIDO";
-      label[1].style.color = "rgb(247, 37, 135)";
+      mensajeError(label[1], input[1], "EMAIL NO VÁLIDO");
       valido[1] = false;
     }
 
     if (reg2.test(input[2].value)) {
-      label[2].textContent = "✅ NUMERO VÁLIDO";
-      label[2].style.color = "rgb(76, 255, 169)";
+      mensajeValidacion(label[2], input[2], "NUMERO VÁLIDO");
       valido[2] = true;
     } else {
-      label[2].textContent = "❌ NUMERO NO VÁLIDO";
-      label[2].style.color = "rgb(247, 37, 135)";
+      mensajeError(label[2], input[2], "NUMERO NO VÁLIDO");
       valido[2] = false;
     }
 
@@ -67,6 +114,12 @@ body.addEventListener("click", (e) => {
 
       label[0].textContent = "INGRESA TU DURACIÓN";
       label[1].textContent = "INGRESA TU CODIGO POSTAL";
+
+      input[0].style.border = "none";
+      input[1].style.border = "none";
+      input[0].style.backgroundImage = "none";
+      input[1].style.backgroundImage = "none";
+
       label[2].style.visibility = "hidden";
       input[2].style.visibility = "hidden";
 
@@ -77,7 +130,7 @@ body.addEventListener("click", (e) => {
       boton[1].classList.remove("boton1");
       setTimeout(() => {
         boton[1].classList.add("boton3");
-      }, 1000); 
+      }, 1000);
 
       boton[1].textContent = "ENVIAR";
       input.forEach((valor) => {
@@ -95,26 +148,20 @@ body.addEventListener("click", (e) => {
     e.preventDefault();
     let valido = [false, false];
 
-    const reg0 = /^[A-Za-zÑñÁáÉéÍíÓóÚúÜü\s]{10,40}$/,
-      reg1 = /^\d{5}(?:[-\s]\d{4})?$/;
-
-    if (reg0.test(input[0].value)) {
-      label[0].textContent = "✅ DIRECCIÓN VALIDA";
-      label[0].style.color = "rgb(76, 255, 169)";
+    if (reg4.test(input[0].value)) {
+      mensajeValidacion(label[0], input[0], "DIRECCIÓN VALIDA");
       valido[0] = true;
     } else {
-      label[0].textContent = "❌ DIRECCIÓN NO VALIDA";
+      mensajeError(label[0], input[0], "DIRECCIÓN NO VALIDA");
       label[0].style.color = "rgb(247, 37, 135)";
       valido[0] = false;
     }
 
-    if (reg1.test(input[1].value)) {
-      label[1].textContent = "✅ CÓDIGO POSTAL VALIDO";
-      label[1].style.color = "rgb(76, 255, 169)";
+    if (reg5.test(input[1].value)) {
+      mensajeValidacion(label[1], input[1], "CÓDIGO POSTAL VALIDO");
       valido[1] = true;
     } else {
-      label[1].textContent = "❌ CÓDIGO POSTAL NO VALIDO";
-      label[1].style.color = "rgb(247, 37, 135)";
+      mensajeError(label[1], input[1], "CÓDIGO POSTAL NO VALIDO");
       valido[1] = false;
     }
 
@@ -164,25 +211,3 @@ body.addEventListener("click", (e) => {
     resetFormulario();
   }
 });
-
-function resetFormulario() {
-  boton[1].classList.add("boton1");
-  boton[1].classList.remove("boton3");
-  boton[1].textContent = "SIGUIENTE";
-
-  label[0].textContent = "INGRESE SU NOMBRE";
-  label[1].textContent = "INGRESE SU MAIL";
-  label[2].textContent = "INGRESE SU NÚMERO DE TELÉFONO";
-
-  label[2].style.visibility = "visible";
-  input[2].style.visibility = "visible";
-
-  label.forEach((text) => {
-    text.style.color = "rgb(255, 255, 255)";
-  });
-  input.forEach((valor) => {
-    valor.value = "";
-  });
-
-  valores = [];
-}
